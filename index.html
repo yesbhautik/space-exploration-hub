@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Space Exploration Hub</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 50%, #2a1e3e 100%);
+            color: #fff;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        .stars {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+
+        .star {
+            position: absolute;
+            background: white;
+            border-radius: 50%;
+            animation: twinkle 3s infinite;
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 1; }
+        }
+
+        header {
+            text-align: center;
+            padding: 60px 20px 40px;
+            position: relative;
+            z-index: 1;
+        }
+
+        h1 {
+            font-size: 3.5em;
+            margin-bottom: 10px;
+            text-shadow: 0 0 20px rgba(100, 200, 255, 0.8);
+            animation: glow 2s ease-in-out infinite;
+        }
+
+        @keyframes glow {
+            0%, 100% { text-shadow: 0 0 20px rgba(100, 200, 255, 0.8); }
+            50% { text-shadow: 0 0 40px rgba(100, 200, 255, 1); }
+        }
+
+        .subtitle {
+            font-size: 1.3em;
+            color: #a0c4ff;
+            margin-top: 10px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 30px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(100, 200, 255, 0.3);
+            border-color: rgba(100, 200, 255, 0.5);
+        }
+
+        .card-icon {
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+
+        .card h2 {
+            font-size: 1.8em;
+            margin-bottom: 15px;
+            color: #64c8ff;
+        }
+
+        .card p {
+            line-height: 1.6;
+            color: #d0d8e8;
+        }
+
+        .quote {
+            text-align: center;
+            font-size: 1.5em;
+            font-style: italic;
+            margin: 60px 20px;
+            padding: 40px;
+            background: rgba(100, 200, 255, 0.1);
+            border-left: 4px solid #64c8ff;
+            border-radius: 10px;
+        }
+
+        .author {
+            display: block;
+            margin-top: 20px;
+            font-size: 0.8em;
+            color: #a0c4ff;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            margin-top: 60px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .rocket {
+            font-size: 2em;
+            display: inline-block;
+            animation: fly 3s ease-in-out infinite;
+        }
+
+        @keyframes fly {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            25% { transform: translateY(-20px) rotate(-5deg); }
+            75% { transform: translateY(-15px) rotate(5deg); }
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5em;
+            }
+            
+            .cards {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="stars" id="stars"></div>
+    
+    <header>
+        <h1>🚀 Space Exploration Hub</h1>
+        <p class="subtitle">Journey Through the Cosmos</p>
+    </header>
+
+    <div class="container">
+        <div class="cards">
+            <div class="card">
+                <div class="card-icon">🌍</div>
+                <h2>Our Home Planet</h2>
+                <p>Earth is the only known planet in the universe to harbor life. It orbits the Sun at an average distance of 93 million miles and is the perfect distance for liquid water to exist.</p>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">🌙</div>
+                <h2>The Moon</h2>
+                <p>Earth's only natural satellite has been visited by 12 human astronauts. The Moon's gravity creates our ocean tides and has stabilized Earth's rotation for billions of years.</p>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">🔴</div>
+                <h2>Mars Mission</h2>
+                <p>The Red Planet is our next frontier. Scientists are working on missions to establish human presence on Mars, which could become humanity's second home in the solar system.</p>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">🛸</div>
+                <h2>Space Stations</h2>
+                <p>The International Space Station orbits Earth at 250 miles altitude, traveling at 17,500 mph. It's humanity's laboratory in space, hosting continuous research since 2000.</p>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">⭐</div>
+                <h2>Distant Stars</h2>
+                <p>Our Sun is just one of over 100 billion stars in the Milky Way galaxy. The nearest star system, Alpha Centauri, is 4.37 light-years away from Earth.</p>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">🌌</div>
+                <h2>Beyond Our Galaxy</h2>
+                <p>The observable universe contains approximately 2 trillion galaxies. Each galaxy contains millions to trillions of stars, and possibly countless planets waiting to be discovered.</p>
+            </div>
+        </div>
+
+        <div class="quote">
+            "The Earth is the cradle of humanity, but mankind cannot stay in the cradle forever."
+            <span class="author">— Konstantin Tsiolkovsky</span>
+        </div>
+    </div>
+
+    <footer>
+        <div class="rocket">🚀</div>
+        <p style="margin-top: 20px;">Exploring the infinite possibilities of space</p>
+        <p style="margin-top: 10px; color: #a0c4ff;">Created in 2026 • Space Exploration Hub</p>
+    </footer>
+
+    <script>
+        // Create animated stars
+        const starsContainer = document.getElementById('stars');
+        const numStars = 100;
+
+        for (let i = 0; i < numStars; i++) {
+            const star = document.createElement('div');
+            star.className = 'star';
+            star.style.left = Math.random() * 100 + '%';
+            star.style.top = Math.random() * 100 + '%';
+            star.style.width = Math.random() * 3 + 'px';
+            star.style.height = star.style.width;
+            star.style.animationDelay = Math.random() * 3 + 's';
+            starsContainer.appendChild(star);
+        }
+
+        // Add smooth scroll behavior
+        document.querySelectorAll('.card').forEach(card => {
+            card.addEventListener('click', function() {
+                this.style.transform = 'scale(0.95)';
+                setTimeout(() => {
+                    this.style.transform = '';
+                }, 200);
+            });
+        });
+    </script>
+</body>
+</html>
